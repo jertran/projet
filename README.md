@@ -1,2 +1,2 @@
 # projet
-web project ruby on rails
+Author : Jeremy TRAN
