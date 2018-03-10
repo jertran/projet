@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    # Example : Student.find_by_name("toto")
   end
 
   # GET /students/new
