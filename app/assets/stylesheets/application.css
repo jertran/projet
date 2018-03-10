@@ -20,9 +20,10 @@ a {
 
 h1 {
   color: #fff;
-  font-size: 10em;
+  font-size: 5.4em;
   font-weight: 900;
-  
+  width: 100%;
+ 
   @media (min-width: 450px) {
     font-size: 1.75em;
   }
