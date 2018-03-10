@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1>Student details</h1>
+<div id="notice" style="display:none"><%= notice %><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div>
 
+<div class="show">
 <p>
   <strong>Name:</strong>
   <%= @student.name %>
@@ -14,6 +16,12 @@
   <strong>Birthdate:</strong>
   <%= @student.birthdate %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="new">
+  <%= link_to 'Edit', edit_student_path(@student) %>
+</div>
+<br>
+<div class="new">
+  <%= link_to 'Back', students_path %>
+</div>

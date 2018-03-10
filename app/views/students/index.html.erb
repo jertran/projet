@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Listing Students</h1>
 
@@ -18,9 +18,9 @@
         <td><%= student.name %></td>
         <td><%= student.lastname %></td>
         <td><%= student.birthdate %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="show-btn"><%= link_to 'Show', student %></td>
+        <td class="edit-btn"><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td class="delete-btn"><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<div class="new">
+  <%= link_to 'New Student', new_student_path %>
+</div>

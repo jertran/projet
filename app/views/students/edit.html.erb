@@ -1,6 +1,13 @@
 <h1>Editing Student</h1>
 
-<%= render 'form' %>
+<div class="create">
+  <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<div class="new">
+  <%= link_to 'Show', @student %>
+</div>
+<br>
+<div class="new">
+  <%= link_to 'Back', students_path %>
+</div>

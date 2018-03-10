@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+a {
+  text-decoration: none;
+  
+}
+
+h1 {
+  color: #fff;
+  font-size: 10em;
+  font-weight: 900;
+  
+  @media (min-width: 450px) {
+    font-size: 1.75em;
+  }
+  
+  @media (min-width: 760px) {
+    font-size: 3.25em;
+  }
+  
+  @media (min-width: 900px) {
+    font-size: 5.25em;
+    margin: 0 0 1em;
+  }
+}
+
+
