@@ -8,11 +8,11 @@ default: &default
   adapter: postgresql
   pool: 5
   timeout: 5000
-  host: ec2-54-228-181-43.eu-west-1.compute.amazonaws.com
-  username: ldwmxghxmnyoev
-  password: a6984f5eec1dc4eba6fbe64756216c3161ad72a650e47c6b5c11ab3f4c891e8b
-  port: 5432
-  database: dfh1umh1its3mu
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PW'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
   
 development:
   <<: *default
