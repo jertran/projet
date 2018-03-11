@@ -1,26 +1,27 @@
-<!-- <p id="notice"><%= notice %></p> -->
+
+
 
 <h1>Listing Students</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Birthdate</th>
-      <th colspan="3"></th>
+    <tr class="table-th">
+      <th class="item">Name</th>
+      <th class="item">Lastname</th>
+      <th class="item">Birthdate</th>
+      <th class="item"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.lastname %></td>
-        <td><%= student.birthdate %></td>
-        <td class="show-btn"><%= link_to 'Show', student %></td>
-        <td class="edit-btn"><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td class="delete-btn"><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="table-tr">
+        <td class="item"><%= student.name %></td>
+        <td class="item"><%= student.lastname %></td>
+        <td class="item"><%= student.birthdate %></td>
+        <td class="item btns"><%= link_to 'Show', student, class: "btn show-btn" %>
+        <%= link_to 'Edit', edit_student_path(student), class: "btn edit-btn"%>
+        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn delete-btn" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -13,29 +13,45 @@
  *= require_tree .
  *= require_self
  */
-a {
-  text-decoration: none;
+
+.home {
+  font-size: 5.8em;
+  font-weight: 900;
   
 }
 
-h1 {
-  color: #fff;
-  font-size: 5.4em;
-  font-weight: 900;
-  width: 100%;
- 
-  @media (min-width: 450px) {
-    font-size: 1.75em;
+.go a {
+  width: 40%;
+  top: 0;
+  margin-left: 30%;
+  margin-right: auto;
+  margin-top: 0;
+  text-decoration: none;
+  padding: 1.5rem;
+  font-size: 3em;
+  height: 3em;
+  font-weight: 400;
+  padding: 1.5rem;
+  text-align: center; 
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  
+}
+
+.go {
+   @media (min-width: 450px) {
+    width: 100%;
+    margin-left: 0;
   }
   
   @media (min-width: 760px) {
-    font-size: 3.25em;
+    width: 100%;
+    margin-left: 0;
   }
   
-  @media (min-width: 900px) {
-    font-size: 5.25em;
-    margin: 0 0 1em;
-  }
+
+  
 }
-
-

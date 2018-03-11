@@ -1,5 +1,17 @@
+<script>
+  var $error = $('#pnotice').text();
+  $( "#notice" ).hide();
+  if ($error.length != 0) {
+    $( "#notice" ).show();
+  } else $( "#notice" ).hide();
+  
+</script>
+<div id="notice">
+  <p id="pnotice"><%= notice %></p>
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div>
 <h1>Student details</h1>
-<div id="notice" style="display:none"><%= notice %><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div>
+
+
 
 <div class="show">
 <p>
