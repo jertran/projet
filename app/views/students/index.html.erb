@@ -1,5 +1,16 @@
+<div id="notice">
+  <p id="pnotice"><%= notice %></p>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+</div>
 
-
+<script>
+var $error = $('#pnotice').text();
+$( "#notice" ).hide();
+if ($error.length === 0) {
+    $( "#notice" ).style.display = 'none';
+} 
+else $( "#notice" ).show();
+</script>
 
 <h1>Listing Students</h1>
 
