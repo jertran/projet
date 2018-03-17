@@ -11,7 +11,7 @@ before_script:
 script:
   - bundle exec rspec
 after_script:
-  - ./cc-test-reporter upload-coverage -r
+  - ./cc-test-reporter upload-coverage -r default
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t simplecov
 deploy:
   provider: heroku
