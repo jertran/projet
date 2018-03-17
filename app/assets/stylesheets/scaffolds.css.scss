@@ -98,6 +98,15 @@ select, input[type=text] {
   text-align: center;
 }
 
+.item-5 {
+  flex-grow: 1;
+  width: 20%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
 .show {
   width: 60%;
   margin-left: 20%;
