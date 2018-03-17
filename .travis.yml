@@ -7,7 +7,8 @@ rvm:
 jobs:
   include:
     - stage: test
-      script: ./test
+      scipt:
+        run: "rake"
     - stage: deploy
       script: ./deploy
 before_script:
