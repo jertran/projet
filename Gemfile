@@ -41,5 +41,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
 
-#Use nominatim
+# Use nominatim
 gem 'nominatim', '0.0.6'
+
+# Use simplecov
+gem 'simplecov', require: false, group: :test
