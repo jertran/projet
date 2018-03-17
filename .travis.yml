@@ -18,7 +18,7 @@ before_script:
 script:
   - bundle exec rspec
 after_script:
-  - ./cc-test-reporter format-coverage --output "coverage/codeclimate.json" 
+  - ./cc-test-reporter format-coverage --output "coverage/codeclimate.json" -t simplecov
   - ./cc-test-reporter upload-coverage -r default
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t simplecov
 deploy:
