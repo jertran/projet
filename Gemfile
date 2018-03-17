@@ -46,3 +46,10 @@ gem 'nominatim', '0.0.6'
 
 # Use simplecov
 gem 'simplecov', require: false, group: :test
+
+# Use rspec
+gem 'rspec', '3.7.0'
+gem 'rspec-core', '3.7.1'
+gem 'rspec-expectations', '3.7.0'
+gem 'rspec-mocks', '3.7.0'
+gem 'rspec-support', '3.7.1'
