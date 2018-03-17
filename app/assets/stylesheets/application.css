@@ -17,7 +17,6 @@
 .home {
   font-size: 5.8em;
   font-weight: 900;
-  
 }
 
 .go a {
@@ -37,8 +36,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
-  
 }
 
 .go {
@@ -51,7 +48,4 @@
     width: 100%;
     margin-left: 0;
   }
-  
-
-  
 }

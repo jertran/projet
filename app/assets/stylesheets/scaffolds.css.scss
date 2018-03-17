@@ -67,7 +67,6 @@ h1 {
     font-size: 5.25em;
     margin: 0 0 1em;
   }
-  
 }
 
 table {
@@ -110,7 +109,7 @@ select, input[type=text] {
   margin-top: -4em;
 }
 
-input[type=text], select {
+input[type=text],input[type=number],select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -178,6 +177,8 @@ input[type=submit]:hover {
   }
 }
 
+
+
 .edit-btn {
   background-color: #FF8481;
   color: white;
@@ -210,10 +211,11 @@ input[type=submit]:hover {
   @media (min-width: 1280px) {
     flex-direction: row;
   }
-  
 }
 
-tr:hover {background-color: #FF8481;}
+tr:hover {
+  background-color: #FF8481;
+}
 
 table a {
   color:white;
@@ -337,5 +339,3 @@ div {
   outline-offset: 15px;
   text-shadow: 1px 1px 2px #427388; 
 }
-
-

@@ -1,0 +1,47 @@
+<div id="notice">
+  <p id="pnotice"><%= notice %></p>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+</div>
+
+<script>
+var $error = $('#pnotice').text();
+$( "#notice" ).hide();
+if ($error.length === 0) {
+    $( "#notice" ).style.display = 'none';
+} 
+else $( "#notice" ).show();
+</script>
+
+<h1>Towns details</h1>
+
+
+
+<div class="show">
+
+<p>
+  <strong>Name:</strong>
+  <%= @town.name %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @town.postalcode %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @town.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @town.longitude %>
+</p>
+</div>
+  
+<div class="new">
+<%= link_to 'Edit', edit_town_path(@town) %>
+</div>
+<div class="new">
+<%= link_to 'Back', towns_path %>
+</div>

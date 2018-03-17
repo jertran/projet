@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Towns</h1>
+
+<table>
+  <thead>
+    <tr class="table-th">
+      <th class="item">Name</th>
+      <th class="item">Postalcode</th>
+      <th class="item">Latitude</th>
+      <th class="item">Longitude</th>
+      <th class="item"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @towns.each do |town| %>
+      <tr class="table-tr">
+        <td class="item"><%= town.name %></td>
+        <td class="item"><%= town.postalcode %></td>
+        <td class="item"><%= town.latitude %></td>
+        <td class="item"><%= town.longitude %></td>
+        <td class="item"><%= link_to 'Show', town, class: "btn show-btn"  %></td>
+        <td class="item"><%= link_to 'Edit', edit_town_path(town), class: "btn edit-btn"  %></td>
+        <td class="item"><%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn delete-btn"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="new">
+  <%= link_to 'New Town', new_town_path %>
+</div>
