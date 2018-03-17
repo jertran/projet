@@ -4,13 +4,6 @@ env:
 language: ruby
 rvm:
 - 2.3.5
-jobs:
-  include:
-    - stage: test
-      scipt:
-        run: "rake"
-    - stage: deploy
-      script: ./deploy
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
