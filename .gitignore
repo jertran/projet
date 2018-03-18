@@ -15,5 +15,3 @@
 /log/*.log
 /tmp
 
-# Ignore coverage informations from simplecov
-coverage
