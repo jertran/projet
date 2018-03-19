@@ -1,9 +1,13 @@
+require 'forecast_io'
+ForecastIO.configure do |configuration|
+  configuration.api_key = '64b1e08c3ffd70590bd6fd0aaaf320ff'
+end
+
 class Town < ActiveRecord::Base
   before_validation :geocode_address
   validates :name, :latitude, :longitude, presence: true
   
-  @@requested_weather
-  
+
   private
     def geocode_address
       place = Nominatim.search(self.name).limit(1).address_details(true)
@@ -13,14 +17,19 @@ class Town < ActiveRecord::Base
         self.longitude = current_town.lon
       end
     end
-  private
+  
+  public
     def get_wheather
-      wheather = ForecastIO::Forecast.new.coordinates(latitude: self.latitude, longitude: self.latitude)
+      wheather = ForecastIO.forecast(self.latitude, self.longitude, params: { units: 'si' })
       if wheather
-        @@requested_weather = wheather
+        puts wheather
+        return wheather
       end
     end
-  def self.weather
-    @@requested_weather
+  
+  def self.wheather
+    wheather = ForecastIO.forecast(:latitude, :longitude)
+    puts wheather
+    return wheather
   end
 end

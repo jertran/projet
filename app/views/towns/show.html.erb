@@ -17,7 +17,9 @@ else $( "#notice" ).show();
 
 
 <div class="show">
-
+<p>
+  <h2>Informations</h2>
+</p>
 <p>
   <strong>Name:</strong>
   <%= @town.name %>
@@ -37,6 +39,32 @@ else $( "#notice" ).show();
   <strong>Longitude:</strong>
   <%= @town.longitude %>
 </p>
+
+<br>
+<p>
+  <h2>Current wheather</h2>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @town.get_wheather.currently.summary %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @town.get_wheather.currently.temperature %> °C
+</p>
+
+<br>
+<p>
+  <h2>Next days</h2>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @town.get_wheather.daily.summary %>
+</p>
+
 </div>
   
 <div class="new">

@@ -10,6 +10,10 @@ class TownsController < ApplicationController
   # GET /towns/1
   # GET /towns/1.json
   def show
+    wheather = @town.get_wheather
+    puts wheather.latitude
+    puts wheather.currently.temperature
+    puts wheather.currently.summary
   end
 
   # GET /towns/new
