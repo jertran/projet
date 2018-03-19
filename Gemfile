@@ -44,8 +44,10 @@ gem 'rails_12factor', group: :production
 # Use nominatim
 gem 'nominatim', '0.0.6'
 
-# Use simplecov
-gem 'simplecov', require: false, group: :test
+group :test do
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
+end
 
 # Use rspec
 gem 'rspec', '3.7.0'
