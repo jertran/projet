@@ -24,21 +24,13 @@ class TownsController < ApplicationController
   # GET /towns/1/edit
   def edit
   end
+  
+  def resource_name
+    Town
+  end
 
-  # POST /towns
-  # POST /towns.json
-  def create
-    @town = Town.new(town_params)
-
-    respond_to do |format|
-      if @town.save
-        format.html { redirect_to @town, notice: 'Town was successfully created.' }
-        format.json { render :show, status: :created, location: @town }
-      else
-        format.html { render :new }
-        format.json { render json: @town.errors, status: :unprocessable_entity }
-      end
-    end
+  def resource_params
+    town_params
   end
 
   # PATCH/PUT /towns/1

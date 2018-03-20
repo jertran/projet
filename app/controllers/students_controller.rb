@@ -22,20 +22,12 @@ class StudentsController < ApplicationController
   def edit
   end
 
-  # POST /students
-  # POST /students.json
-  def create
-    @student = Student.new(student_params)
+  def resource_name
+    Student
+  end
 
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
-      else
-        format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
-    end
+  def resource_params
+    student_params
   end
 
   # PATCH/PUT /students/1
