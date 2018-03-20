@@ -46,6 +46,7 @@ gem 'nominatim', '0.0.6'
 
 group :test do
   gem "simplecov"
+  gem "simplecov-console"
   gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
