@@ -5,7 +5,8 @@ end
 
 class Town < ActiveRecord::Base
   before_validation :geocode_address
-  validates :name, :latitude, :longitude, presence: true
+  validates :latitude, :longitude, presence: true
+  validates :name, allow_nil: false, presence: true
   
 
   private
@@ -22,14 +23,7 @@ class Town < ActiveRecord::Base
     def get_wheather
       wheather = ForecastIO.forecast(self.latitude, self.longitude, params: { units: 'si' })
       if wheather
-        puts wheather
         return wheather
       end
     end
-  
-  def self.wheather
-    wheather = ForecastIO.forecast(:latitude, :longitude)
-    puts wheather
-    return wheather
-  end
 end

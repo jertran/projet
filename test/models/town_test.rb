@@ -18,5 +18,14 @@ class TownTest < ActiveSupport::TestCase
     assert !unknown.valid?
   end
   
+  test "get_wheather method does request forecastio wheather information" do
+    belfort = Town.new
+    belfort.name = 'belfort'
+    assert belfort.valid?
+    assert_equal(belfort.get_wheather.latitude, 47.6379599)
+    assert_equal(belfort.get_wheather.longitude, 6.8628942)
+    assert_not_nil(belfort.get_wheather.currently)
+  end
+  
   
 end
