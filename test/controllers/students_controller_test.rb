@@ -16,19 +16,14 @@ class StudentsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
-
-  test "should create student" do
-    assert_difference('Student.count') do
-      post :create, student: { birthdate: @student.birthdate, lastname: @student.lastname, name: @student.name }
-    end
-
-    assert_redirected_to student_path(assigns(:student))
+  
+  test "should get resource name" do
+    assert_equal(Student, @controller.resource_name)
   end
   
-  test "shouldn't save student if blank in record" do
-    assert_no_difference('Student.count') do
-      post :create, student: { birthdate: nil, lastname: nil, name: nil }
-    end
+  test "should get resource params" do
+    post :create, student: { birthdate: @student.birthdate, lastname: @student.lastname, name: @student.name }
+    assert_equal({"name"=>"MyString", "lastname"=>"MyString", "birthdate"=>"2018-03-10"}, @controller.resource_params)
   end
   
   test "should raise error if name is missing" do

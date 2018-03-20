@@ -15,20 +15,6 @@ class TownsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
-
-  test "should create town" do
-    assert_difference('Town.count') do
-      post :create, town: { latitude: @town.latitude, longitude: @town.longitude, name: @town.name, postalcode: @town.postalcode }
-    end
-
-    assert_redirected_to town_path(assigns(:town))
-  end
-  
-  test "shouldn't save town if blank in record" do
-    assert_no_difference('Town.count') do
-      post :create, town: { name: nil, latitude: nil, longitude: nil }
-    end
-  end
   
   test "should raise error if name is missing" do
     record = Town.new

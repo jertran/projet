@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   def edit
   end
-
+  
   def resource_name
     Student
   end
@@ -30,18 +30,8 @@ class StudentsController < ApplicationController
     student_params
   end
 
-  # PATCH/PUT /students/1
-  # PATCH/PUT /students/1.json
-  def update
-    respond_to do |format|
-      if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
-        format.json { render :show, status: :ok, location: @student }
-      else
-        format.html { render :edit }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
-    end
+  def resource
+    @student
   end
 
   # DELETE /students/1
