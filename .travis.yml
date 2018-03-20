@@ -15,8 +15,8 @@ script:
   - bundle exec rake
 after_script:
   - ./cc-test-reporter format-coverage --output "./coverage/codeclimate.$N.json" -t simplecov
-  - ./cc-test-reporter sum-coverage --output - --parts 1 coverage/codeclimate.$N.json
-  - ./cc-test-reporter upload-coverage
+  - ./cc-test-reporter sum-coverage --output - --parts 1 "coverage/codeclimate.$N.json"
+  - ./cc-test-reporter upload-coverage --input "./coverage/codeclimate.$N.json"
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t simplecov
 deploy:
   provider: heroku
