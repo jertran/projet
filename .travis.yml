@@ -11,8 +11,7 @@ before_script:
 script:
   - bundle exec rspec
 after_script:
-  - ./cc-test-reporter sum-coverage --output "./coverage/codeclimate.json" -t simplecov
-  - ./cc-test-reporter upload-coverage -r default
+  - CODECLIMATE_REPO_TOKEN=3a0a0d4a4f50f803d61a12a6527daaebb37345ebe45ac0ad8ff1a496216892d4 bundle exec codeclimate-test-reporter
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t simplecov
 deploy:
   provider: heroku
