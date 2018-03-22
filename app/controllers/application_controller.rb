@@ -3,19 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  def message_factory
-    if resource_name == Student
-       str = 'Student'
-    else
-       str = 'Town'
-    end
-  end
-  
   def create
     @instance = resource_name.new(resource_params)
     respond_to do |format|
       if @instance.save
-        format.html { redirect_to @instance, notice: message_factory+' was successfully created.' }
+        format.html { redirect_to @instance, notice: @instance.class.name+' was successfully created.' }
         format.json { render :show, status: :created, location: @instance }
       else
         format.html { render :new }
@@ -28,7 +20,7 @@ class ApplicationController < ActionController::Base
     @instance = resource
     respond_to do |format|
       if @instance.update(resource_params)
-        format.html { redirect_to @instance, notice: message_factory+' was successfully updated.' }
+        format.html { redirect_to @instance, notice: @instance.class.name+' was successfully updated.' }
         format.json { render :show, status: :ok, location: @instance }
       else
         format.html { render :edit }
