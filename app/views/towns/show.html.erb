@@ -1,8 +1,5 @@
-<div id="notice">
-  <p id="pnotice"><%= notice %></p>
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-</div>
-
+<script src="//maps.google.com/maps/api/js?key=[your API key]"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <script>
 var $error = $('#pnotice').text();
 $( "#notice" ).hide();
@@ -11,6 +8,11 @@ if ($error.length === 0) {
 } 
 else $( "#notice" ).show();
 </script>
+
+<div id="notice">
+  <p id="pnotice"><%= notice %></p>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+</div>
 
 <h1>Towns details</h1>
 
@@ -50,13 +52,6 @@ else $( "#notice" ).show();
   <%= @town.get_wheather.currently.summary %>
 </p>
 
-<iframe id="forecast_embed" 
-        frameborder="0" 
-        height="245" 
-        width="100%" 
-        src="//forecast.io/embed/#lat=<%= @town.latitude %>&lon=<%= @town.longitude %>&name=<%= @town.name %>&units=si">
-</iframe> 
-
 <p>
   <strong>Temperature:</strong>
   <%= @town.get_wheather.currently.temperature %> °C
@@ -71,6 +66,18 @@ else $( "#notice" ).show();
   <strong>Summary:</strong>
   <%= @town.get_wheather.daily.summary %>
 </p>
+
+<div class="widget">
+<iframe id="forecast_embed" 
+        frameborder="0" 
+        height="245" 
+        width="100%" 
+src="//forecast.io/embed/#lat=<%= @town.latitude %>&lon=<%= @town.longitude %>&name=<%= @town.name %>&units=si">
+</iframe> 
+</div>
+ </div>
+
+
 
 </div>
   

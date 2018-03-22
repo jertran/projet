@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def create
+    puts "create!"
     @instance = resource_name.new(resource_params)
     respond_to do |format|
       if @instance.save
